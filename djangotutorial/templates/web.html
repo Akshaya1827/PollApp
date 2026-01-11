@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-form</title>
+</head>
+<body>
+    <!-- This web form takes two numbers from the user
+and displays their sum.
+
+You also need to modify url files, view files
+accordingly. -->
+    <h1>Sum of Two Numbers</h1>
+    <form>
+        <label for = "num1">Enter first number</label>
+        <input type="number" id="num1" name="num1"><br><br>
+        <label for = "num2">Enter second number</label>
+        <input type="number" id="num2" name="num2"><br><br>
+        <input type="submit" value="Submit">
+
+
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            // print in web page
+            document.body.insertAdjacentHTML('beforeend', `<h2>The sum is: ${sum}</h2>`);
+            
+        });
+    </script>
+</body>
+</html>
