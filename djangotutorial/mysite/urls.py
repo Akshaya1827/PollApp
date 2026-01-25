@@ -17,12 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 
+
+
 urlpatterns = [
-     path('', include('polls.urls')), 
-    # path('polls/', include("polls.urls")),
+    # path('', views.index,name='index'), 
+     path('', include("polls.urls")),
 
     path('admin/', admin.site.urls),
-    path('polls/', include('polls.urls')),
+    # path('polls/', include('polls.urls')),
     
     
 ]
